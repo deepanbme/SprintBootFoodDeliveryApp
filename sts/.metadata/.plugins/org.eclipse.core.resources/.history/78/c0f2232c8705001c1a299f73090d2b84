@@ -1,0 +1,16 @@
+package com.training.springbootdemo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.training.springbootdemo.model.FoodQuantity;
+import com.training.springbootdemo.model.OrderDetails;
+
+public interface OrderDetailsRepository extends CrudRepository<OrderDetails, Integer>{
+
+	
+
+
+}

@@ -1,0 +1,55 @@
+package com.training.springbootdemo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class FoodAvailability {
+
+
+	@Id
+	private int id;
+	private String foodName;
+	private int quantity;
+	
+	public FoodAvailability() {
+		
+	}
+
+	public FoodAvailability(int id, String foodName, int quantity) {
+		this.id = id;
+		this.foodName = foodName;
+		this.quantity = quantity;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFoodName() {
+		return foodName;
+	}
+
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "FoodAvailability [id=" + id + ", foodName=" + foodName + ", quantity=" + quantity + "]";
+	}
+	
+	
+}

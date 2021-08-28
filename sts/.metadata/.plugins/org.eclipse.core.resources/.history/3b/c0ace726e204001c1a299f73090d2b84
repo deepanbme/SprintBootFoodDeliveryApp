@@ -1,0 +1,24 @@
+package com.training.springbootdemo.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.training.springbootdemo.model.Food;
+
+@Repository
+public interface FoodRepository extends JpaRepository<Food, Integer>{
+	
+	@Query(value = "select * from food where foodname = :foodname", nativeQuery = true)
+	Optional<Food> findByName(String foodname);
+	
+	@Query(value = "select quantity from foodquantity where foodname = :foodname", nativeQuery = true)
+	int checkQuantity(String foodname);
+	
+	@Query(value = "Update foodquantity Set quantity = :quantity-1 where foodname in (select * from (select foodname from foodquantity where foodname = :foodname) as t);")
+	void updateQuantity();
+}

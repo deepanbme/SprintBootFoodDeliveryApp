@@ -1,0 +1,10 @@
+package com.training.foodorder;
+
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface FoodRepository extends CrudRepository<Food, Integer>{
+	
+	Optional<Food> findByName(String name);
+}

@@ -1,0 +1,12 @@
+package com.training.foodorder;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+public interface FoodRepository extends CrudRepository<Food, Integer>{
+	
+	@Query(value = "select * from foodlist where foodName = :foodName", nativeQuery = true)
+	Optional<Food> findByName(String name);
+}

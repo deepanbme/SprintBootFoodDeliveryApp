@@ -1,0 +1,55 @@
+package com.training.springbootdemo.model;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class OrderDetails {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String foodName;
+	private int quantity;
+	
+	public OrderDetails() {
+		
+	}
+
+	public OrderDetails(int orderId, String foodName, int quantity) {
+		this.id = orderId;
+		this.foodName = foodName;
+		this.quantity = quantity;
+	}
+
+	public int getOrderId() {
+		return id;
+	}
+
+	public void setOrderId(int orderId) {
+		this.id = orderId;
+	}
+
+	public String getFoodName() {
+		return foodName;
+	}
+
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderDetails [orderId=" + id + ", foodName=" + foodName + ", quantity=" + quantity + "]";
+	}
+	
+	
+}

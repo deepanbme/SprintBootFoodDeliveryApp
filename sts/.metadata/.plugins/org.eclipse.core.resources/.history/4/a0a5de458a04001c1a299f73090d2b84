@@ -1,0 +1,5 @@
+package com.training.foodorder;
+
+public class Food {
+
+}

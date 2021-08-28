@@ -1,0 +1,8 @@
+package com.training.foodorder;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface FoodRepository extends CrudRepository<Food, Integer>{
+	
+	String findByName(String name);
+}

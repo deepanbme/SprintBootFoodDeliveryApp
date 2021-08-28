@@ -1,0 +1,5 @@
+package com.training.springbootdemo.model;
+
+public class FoodAvailability {
+
+}
